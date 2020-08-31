@@ -1,0 +1,171 @@
+# #: import inputparameters Inputparameters
+#: import statusbar StatusBar
+
+<InputParameters@GridLayout>
+    #Initialisierung .py zu .kv Ids
+    prozess: _prozess
+    pro1: _prozess1
+    pro2: _prozess2
+    pro3: _prozess3
+    vorbehandlung: _vorbehandlung
+    material: _material
+    haerte: _haerte
+    rauheit: _rauheit
+
+    cols: 2
+    padding: 25
+    spacing: 10
+
+    #Farbe Schrift Label
+    cb: (1,1, 1,1)
+
+    #Farbe Slider
+    cs: (0,0.353, 0.663,1)
+
+    #FontSize
+    fs: '23sp'
+
+    #Prozess
+    Label:
+        text:'Prozess:              '
+        bold: True
+        font_name: 'Roboto'
+        font_size: root.fs
+        text_size: self.size
+        halign: 'left'
+        valign: 'center'
+        color: root.cb
+
+    BoxLayout:
+        orientation: 'horizontal'
+        id: _prozess
+
+        ToggleButton:
+            id:_prozess1
+            text:'P-MOH'
+            group: "proc_group"
+            background_color: 0.0, 0.353, 0.663, 1.0
+            bold: True
+            on_state: root.on_state(self)
+            #on_press: root._proz_value = 1
+
+        ToggleButton:
+            id:_prozess2
+            text:'E-MOH'
+            group: "proc_group"
+            background_color: 0.0, 0.353, 0.663, 1.0
+            bold: True
+            on_state: root.on_state(self)
+            #on_press: root._proz_value = 2
+
+        ToggleButton:
+            id:_prozess3
+            text:'PE-MOH'
+            group: "proc_group"
+            background_color: 0.0, 0.353, 0.663, 1.0
+            bold: True
+            on_state: root.on_state(self)
+            #on_press: root._proz_value = 3
+
+
+    #Material
+
+    Label:
+        text: 'Material:'
+        bold: True
+        font_size: root.fs
+        text_size: self.size
+        halign: 'left'
+        valign: 'center'
+        color: root.cb
+
+    Spinner:
+        id: _material
+        # Callback
+        text: "Auswahl treffen"
+        bold:True
+        values: ['1.2379', 'Gusseisen', 'Kautschuk', 'Carbon', 'Adamantium']
+        #background_normal: '[1,1,1,1]'
+        background_color: root.cs
+        color: root.cb
+
+    # Herstellschritte
+    Label:
+        text:'Endbearbeitung:'
+        bold: 'True'
+        font_size: root.fs
+        text_size: self.size
+        halign: 'left'
+        valign: 'center'
+        color: root.cb
+
+    Spinner:
+        id: _vorbehandlung
+        # Callback
+        #on_text: app.root.show_selected_value(self, self.text)
+
+        text: "Auswahl treffen"
+        bold:True
+        values: [u'Fr\u00e4sen', 'Erodieren', 'Schleifen', 'Polieren']
+        #background_normal: '[1,1,1,1]'
+        background_color: root.cs
+        color: root.cb
+
+
+    # Haerte
+    Label:
+        text: u"H\u00e4rte:"
+        bold: True
+        font_size: root.fs
+        text_size: self.size
+        halign: 'left'
+        valign: 'center'
+        color: root.cb
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 15
+
+        Label:
+            text: str(_haerte.value) + ' HRC'
+            color: root.cb
+            bold: True
+
+        Slider:
+            id: _haerte
+            min: 45
+            max: 65
+            value:55
+            step: 1
+            value_track: True
+            value_track_color: root.cs
+
+    # Rauheit
+    Label:
+        text:'Rauheit:              '
+        #color: cb
+        bold: True
+        font_size: root.fs
+        text_size: self.size
+        halign: 'left'
+        valign: 'center'
+        color: root.cb
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 15
+
+        Label:
+            text: str("%.1f" % _rauheit.value) + ' Rz' #eine Nachkommastelle
+            color: root.cb
+            bold: True
+
+        Slider:
+            id: _rauheit
+            min: 1
+            max: 10
+            value:5.5
+            step: 0.1
+            value_track: True
+            value_track_color: root.cs
+

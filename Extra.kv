@@ -1,0 +1,31 @@
+<Extra@BoxLayout>
+
+    orientation: 'horizontal'
+    spacing: 20
+    padding: 10
+
+    Label:
+        size_hint: 1, 1
+
+    Button:
+        text:'Help'
+        font_size: '12sp'
+        bold: True
+        underline: True
+        background_color: 0, 0, 0, 0
+        on_release:
+            app.root.current = "instruction"
+            app.root.transition.direction ="down"
+
+    Button:
+        text:'About'
+        font_size: '12sp'
+        bold: True
+        underline: True
+        background_color: 0, 0, 0, 0
+        on_release:
+            app.root.current = "about"
+            app.root.transition.direction ="up"
+
+    Label:
+        size_hint: 1, 1

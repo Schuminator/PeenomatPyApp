@@ -1,0 +1,55 @@
+<Addition@GridLayout>
+    step1: _step1
+    step2: _step2
+
+    cols: 1
+
+    #Farbe Schrift Label
+    cb: (1,1, 1,1)
+
+    #Farbe Slider
+    cs: (0,0.353, 0.663,1)
+
+    #FontSize
+    fs: '23sp'
+
+    GridLayout:
+        size_hint: 1,0.9
+        cols: 2
+        padding: 25
+        spacing: 10
+
+        Label:
+            text: '1. Fertigungsschritt'
+            font_size: root.fs
+            text_size: self.size
+            halign: 'left'
+            valign: 'center'
+            color: root.cb
+            bold: True
+
+        Spinner:
+            id: _step1
+
+            text: "Auswahl treffen"
+            bold:True
+            values: [u'Fr\u00e4sen', 'Erodieren', 'Schleifen', 'Polieren']
+
+        Label:
+            text: '2. Fertigungsschritt'
+            bold: True
+
+        Spinner:
+            id: _step2
+
+            text: "Auswahl treffen"
+            bold:True
+            values: [u'Fr\u00e4sen', 'Erodieren', 'Schleifen', 'Polieren']
+
+
+    Button:
+        size_hint: 1,0.1
+        text: "Passt!"
+        on_release:
+            app.root.current = "peenomat"
+            app.root.transition.direction = "right"

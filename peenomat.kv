@@ -1,0 +1,117 @@
+
+<Peenomat>
+    #name: "peenomat"
+
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'bottom'
+        GridLayout:
+            cols: 1
+            canvas.before:
+                Color:
+                    rgba: 0.75 ,0.75, 0.75, 0.7
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: 'background.png'
+
+            #canvas.before:
+                #Color:
+                    #rgba: 0.75 ,0.75, 0.75, 1
+                #Rectangle:
+                    #pos: self.pos
+                    #size: self.size
+
+            Header:
+                id: _header
+                size_hint: 1, 0.1
+
+            InputParameters:
+                id:_input_parameters
+                size_hint: 1, 0.45
+
+
+            StatusBar:
+                id:_status_bar
+                size_hint: 1, 0.1
+                #height: 50
+
+            OutputParameters:
+                id:_output_parameters
+                size_hint: 1, 0.33
+
+            Extra:
+                id:_extra
+                size_hint: 1, 0.1
+
+
+
+
+<Instruction>:
+    #name: "instruction"
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'bottom'
+        GridLayout:
+            cols: 1
+            canvas.before:
+                Color:
+                    rgba: 0.75 ,0.75, 0.75, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Header:
+                id: _header
+                size_hint: 1, 0.1
+
+            Label:
+                text:" Bei dieser Anwendung..."
+                size_hint: 1, 0.8
+
+            Button:
+                text: "Ok Verstanden!"
+                bold: True
+                size_hint: 1, 0.1
+                background_color: 0.0, 0.353, 0.663, 1.0
+                on_release:
+                    app.root.current = "peenomat"
+                    app.root.transition.direction = "up"
+
+<Additional>:
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'bottom'
+        GridLayout:
+            cols: 1
+            canvas.before:
+                Color:
+                    rgba: 0.75 ,0.75, 0.75, 0.7
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: 'background.png'
+
+            Header:
+                id: _header
+                size_hint: 1, 0.1
+
+            Addition:
+                id: _additional
+                size_hint: 1, 0.9
+
+
+
+
+<About>:
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'bottom'
+        GridLayout:
+            cols:1
+            Header:
+                id:_header
+                size_hint: 1, 0.1
+
+            Info:
+                id:_about
+                size_hint: 1, 0.9

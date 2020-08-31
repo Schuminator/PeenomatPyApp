@@ -1,0 +1,27 @@
+<Header@BoxLayout>:
+    orientation: 'horizontal'
+
+    canvas.before:
+        Color:
+            rgba: 0,0.353, 0.663, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    #canvas:
+        #Rectangle:
+            #source: 'ptu.jpg'
+    Image:
+        source: 'athene.png'
+        size_hint_x: 0.4
+        allow_stretch: True
+
+    Label:
+        markup: True
+        text: 'Peenomat'
+        font_name: 'Com'
+        font_size: '43sp'
+
+    Image:
+        source: 'ptu.png'
+        size_hint_x: 0.3
+        allow_stretch: True

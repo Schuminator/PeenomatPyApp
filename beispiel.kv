@@ -1,0 +1,86 @@
+<HeadLabel@Label>:
+    text:
+    font_size: 20
+    bold: True
+    #text_size: self.size
+    halign: 'left'
+    valign: 'center'
+    canvas.before:
+        Color:
+            rgba: 0.65 ,0.65, 0.65, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+
+<MyLayout>
+    cols:4
+    padding: 10
+    spacing: 30
+
+    canvas.before:
+        Color:
+            rgba: (0.69 ,0.86, 0.94,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    HeadLabel:
+        id:mylabel
+        text:"Label:"
+
+    Label:
+        text:"Das ist ein Label."
+
+    HeadLabel:
+        text: "ToggleButton:"
+
+    BoxLayout:
+        orientation: "horizontal"
+        ToggleButton:
+            group: "bsp"
+            text: "PTW"
+        ToggleButton:
+            group: "bsp"
+            text: "PtU"
+        ToggleButton:
+            group: "bsp"
+            text: "DiK"
+        #text: u"Dr\u00fccken"
+        #on_press: print(mylabel.text)
+    HeadLabel:
+        text:"Button:"
+    Button:
+        text: u"Dr\u00fccken"
+    HeadLabel:
+        text:"Spinner:"
+    Spinner:
+        text: "Institute"
+        values: ["PtU", "PTW", "DiK"]
+    HeadLabel:
+        text: "Slider"
+
+    Slider:
+        min: 0
+        max: 100
+        step: 1
+
+    HeadLabel:
+        text: "Checkbox:"
+
+    CheckBox:
+
+    HeadLabel:
+        text: "ProgressBar:"
+    ProgressBar:
+        max: 150
+        value:90
+
+
+    HeadLabel:
+        text: "Switch:"
+
+    Switch:
+
+

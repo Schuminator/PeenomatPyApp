@@ -1,0 +1,41 @@
+<Info@BoxLayout>:
+    orientation: 'vertical'
+    padding: 25
+    spacing: 10
+    canvas.before:
+        Color:
+            rgba: 0.75 ,0.75, 0.75, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Label:
+        text: "[b] Programminfo:[/b] \n Version: 1.00.01 \n Erstellt von: Philipp Schumann"
+        text_size: self.size
+        markup: True
+        halign: "left"
+        valign: "middle"
+
+    BoxLayout:
+        orientation:'vertical'
+        Label:
+            text: "[b] Lizenz:[/b] "
+            text_size: self.size
+            markup: True
+            halign: "left"
+            valign: "middle"
+
+        ScrollView:
+            Label:
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]
+                halign: 'left'
+                valign: 'top'
+                text:' 1.1.1    \n  \n 1.1.2      \n      \n 1.1.3 \n \n 1.1.4 \n \n 1.1.5 \n \n 1.1.6'
+
+    Button:
+        text: 'Capiche'
+        size_hint: 1, 0.1
+        on_release:
+            app.root.current = "peenomat"
+            app.root.transition.direction ="down"

@@ -1,0 +1,84 @@
+#: import statusbar StatusBar
+
+<OutputParameters@GridLayout>
+
+    #Initialisierung .py zu .kv
+    frequenz: _frequenz
+    frequency:'---'
+    speed:'---'
+    hub:'---'
+
+    cols: 2
+    padding: 25
+    spacing: 10
+    #canvas.before:
+        #Color:
+            #rgba: 0.75 ,0.75, 0.75, 1
+        #Rectangle:
+            #pos: self.pos
+            #size: self.size
+
+# Frequenz
+    Label:
+        text:'Frequenz:'
+        font_size: 23
+        bold: True
+        text_size: self.size
+        halign: 'left'
+        valign: 'center'
+    Label:
+        id: _frequenz
+        text:  root.frequency
+        font_size: 30
+        font_name: 'ProFont'
+        color: (1, 1, 0, 1)
+        bold: True
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'monitor2.png'
+
+#Vorschub
+    Label:
+        text:'Vorschub:'
+        font_size: 23
+        bold: True
+        text_size: self.size
+        halign: 'left'
+        valign: 'center'
+
+    Label:
+        id: _vorschub
+        text:  root.speed
+        font_size: 30
+        font_name: 'ProFont'
+        color: (1, 1, 0, 1)
+        bold : True
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'monitor2.png'
+
+#Hub
+    Label:
+        text:'Hub:'
+        font_size: 23
+        bold: True
+        text_size: self.size
+        halign: 'left'
+        valign: 'center'
+    Label:
+        id: _hub
+        text:  root.hub
+        font_size: 30
+        font_name: 'ProFont'
+        color: (1, 1, 0, 1)
+        bold: True
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: 'monitor2.png'
+
