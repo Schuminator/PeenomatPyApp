@@ -23,7 +23,7 @@ Builder.load_file('outputparameters.kv')
 Builder.load_file('Extra.kv')
 Builder.load_file('info.kv')
 Builder.load_file('addition.kv')
-#loading main kv
+#  loading main kv
 Builder.load_file('peenomat.kv')
 
 
