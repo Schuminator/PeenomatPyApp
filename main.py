@@ -16,13 +16,13 @@ from kivy.properties import ObjectProperty
 from kivy.config import Config
 
 
-Builder.load_file('Header.kv')
-Builder.load_file('Statusbar.kv')
+Builder.load_file('header.kv')
+Builder.load_file('statusbar.kv')
 Builder.load_file('Inputparameters.kv')
-Builder.load_file('Outputparameters.kv')
+Builder.load_file('outputparameters.kv')
 Builder.load_file('Extra.kv')
-Builder.load_file('Info.kv')
-Builder.load_file('Addition.kv')
+Builder.load_file('info.kv')
+Builder.load_file('addition.kv')
 #loading main kv
 Builder.load_file('peenomat.kv')
 
