@@ -1,5 +1,26 @@
 #: import statusbar StatusBar
 
+<OutLeft@Label>: #OutputParameter Label linke Spalte
+    text:
+    font_size: '23sp'
+    bold: True
+    text_size: self.size
+    h_align: 'left'
+    v_align: 'center'
+
+<OutRight@Label>: #OutPutParameter Label rechte Spalte
+    text:
+    font_size: '30sp'
+    font_name: 'ProFont'
+    color: (1, 1, 0, 1)
+    bold: True
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'monitor2.png'
+
+
 <OutputParameters@GridLayout>
 
     #Initialisierung .py zu .kv
@@ -19,66 +40,28 @@
             #size: self.size
 
 # Frequenz
-    Label:
+    OutLeft:
         text:'Frequenz:'
-        font_size: 23
-        bold: True
-        text_size: self.size
-        halign: 'left'
-        valign: 'center'
-    Label:
+
+    OutRight:
         id: _frequenz
         text:  root.frequency
-        font_size: 30
-        font_name: 'ProFont'
-        color: (1, 1, 0, 1)
-        bold: True
-        canvas.before:
-            Rectangle:
-                pos: self.pos
-                size: self.size
-                source: 'monitor2.png'
+
 
 #Vorschub
-    Label:
+    OutLeft:
         text:'Vorschub:'
-        font_size: 23
-        bold: True
-        text_size: self.size
-        halign: 'left'
-        valign: 'center'
 
-    Label:
+    OutRight:
         id: _vorschub
         text:  root.speed
-        font_size: 30
-        font_name: 'ProFont'
-        color: (1, 1, 0, 1)
-        bold : True
-        canvas.before:
-            Rectangle:
-                pos: self.pos
-                size: self.size
-                source: 'monitor2.png'
 
 #Hub
-    Label:
+    OutLeft:
         text:'Hub:'
-        font_size: 23
-        bold: True
-        text_size: self.size
-        halign: 'left'
-        valign: 'center'
-    Label:
+
+    OutRight:
         id: _hub
         text:  root.hub
-        font_size: 30
-        font_name: 'ProFont'
-        color: (1, 1, 0, 1)
-        bold: True
-        canvas.before:
-            Rectangle:
-                pos: self.pos
-                size: self.size
-                source: 'monitor2.png'
+
 

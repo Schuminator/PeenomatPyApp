@@ -1,41 +1,33 @@
 
 #: import statusbar StatusBar
+<MyButton@Button>:
+    background_color: 0.0, 0.353, 0.663, 1.0
+    size_hint: 1, 1
+    bold: True
+    font_size: '20sp'
 
 <StatusBar@BoxLayout>
 
     orientation:'horizontal'
     padding: 10
-    spacing: 30
+    spacing: 20
     fs: 16
     Label:
-        size_hint: 0.05, 1
+        size_hint: 0.1, 1
 
-    Button:
+    MyButton:
         text: 'Leeren'
-        background_color: 0.0, 0.353, 0.663, 1.0
-        size_hint: .2, 1
-        bold: True
-        font_size: 20
         on_press: root.btn_clear()
 
-    Button:
+    MyButton:
         text: "Mehr"
-        background_color: 0.0, 0.353, 0.663, 1.0
-        size_hint: 0.1,1
-        bold: True
-        font_size: "20sp"
         on_release:
             app.root.current = "additional"
             app.root.transition.direction ="left"
 
-
-    Button:
+    MyButton:
         text: u"Best\u00e4tigen"
-        background_color: 0.0, 0.353, 0.663, 1.0
-        size_hint: 0.2, 1
-        bold: True
-        font_size: "20sp"
         on_press: root.btn_submit()
 
     Label:
-        size_hint: 0.05, 1
+        size_hint: 0.1, 1
