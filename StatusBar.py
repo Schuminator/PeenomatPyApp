@@ -30,6 +30,7 @@ class StatusBar(BoxLayout):
     haerte = ObjectProperty(None)
     rauheit = ObjectProperty(None)
     verfahren = ObjectProperty(None)
+    durchmesser = ObjectProperty(None)
 
     #OutputGrößen
     frequency = StringProperty(None)
@@ -42,7 +43,7 @@ class StatusBar(BoxLayout):
         op = App.get_running_app().root.get_screen('peenomat').ids._output_parameters
         ap = App.get_running_app().root.get_screen('additional').ids._additional
 
-        print(u"Härte:", ip.haerte.value, "Rauheit:", ip.rauheit.value, "Material:", ip.material.text, "Vorbehandlung:", ip.vorbehandlung.text, ver, ap.step1.text )
+        print(u"Härte:", ip.haerte.value, "Rauheit:", ip.rauheit.value,"Durchmesser:", ip.durchmesser.value, ver, ap.step1.text ) #, "Vorbehandlung:", ip.vorbehandlung.text, "Material:", ip.material.text
 
         frequenz = 0
         if ip.haerte.value < 50:
@@ -66,10 +67,11 @@ class StatusBar(BoxLayout):
         ip.pro1.state = "normal"
         ip.pro2.state = "normal"
         ip.pro3.state = "normal"
-        ip.material.text = "Auswahl treffen"
-        ip.vorbehandlung.text = "Auswahl treffen"
+        #ip.material.text = "Auswahl treffen"
+        #ip.vorbehandlung.text = "Auswahl treffen"
         ip.haerte.value = 55
         ip.rauheit.value = 5.5
+        ip.durchmesser.value = 17.5
         op.frequency = "---"
         op.speed = "---"
         op.hub = "---"
