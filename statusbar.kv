@@ -31,3 +31,16 @@
 
     Label:
         size_hint: 0.1, 1
+
+<Warn@GridLayout>
+
+    warn: _warn
+    warn: "Warnung, etwas fehlt: \n Auswahl weiter spezifizieren"
+
+    cols: 1
+    padding: 25
+    spacing: 10
+
+    Label:
+        id: _warn
+        text: root.warn

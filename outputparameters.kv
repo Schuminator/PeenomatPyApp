@@ -28,6 +28,9 @@
     frequency:'---'
     speed:'---'
     hub:'---'
+    powpres:'---'
+    txtpowpres:'Leistung'
+    txtfrequency: 'Frequenz'
 
     cols: 2
     padding: 25
@@ -41,12 +44,20 @@
 
 # Frequenz
     OutLeft:
-        text:'Frequenz:'
+        id: _txtfrequenz
+        text: root.txtfrequency
 
     OutRight:
         id: _frequenz
         text:  root.frequency
 
+#Leistung_Druck:
+    OutLeft:
+        id:_txtleistdruck
+        text: root.txtpowpres
+    OutRight:
+        id: _leistdruck
+        text: root.powpres
 
 #Vorschub
     OutLeft:

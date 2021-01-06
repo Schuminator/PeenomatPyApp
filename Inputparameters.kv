@@ -6,12 +6,13 @@
     prozess: _prozess
     pro1: _prozess1
     pro2: _prozess2
-    pro3: _prozess3
+    #pro3: _prozess3
     #vorbehandlung: _vorbehandlung #auskommentiert weil auf addition verschoben
     #material: _material
     haerte: _haerte
     rauheit: _rauheit
     durchmesser: _durchmesser
+    materialtrag: _materialtrag
 
     cols: 2
     padding: 25
@@ -52,21 +53,21 @@
 
         ToggleButton:
             id:_prozess2
-            text:'E-MOH'
+            text:'EM-MOH'
             group: "proc_group"
             background_color: 0.0, 0.353, 0.663, 1.0
             bold: True
             on_state: root.on_state(self)
             #on_press: root._proz_value = 2
 
-        ToggleButton:
-            id:_prozess3
-            text:'PE-MOH'
-            group: "proc_group"
-            background_color: 0.0, 0.353, 0.663, 1.0
-            bold: True
-            on_state: root.on_state(self)
-            #on_press: root._proz_value = 3
+        #ToggleButton:
+        #    id:_prozess3
+        #   text:'PE-MOH'
+        #    group: "proc_group"
+        #    background_color: 0.0, 0.353, 0.663, 1.0
+        #    bold: True
+        #    on_state: root.on_state(self)
+        #    #on_press: root._proz_value = 3
 
 
     #Hammerkopfdurchmesser
@@ -91,10 +92,10 @@
 
         Slider:
             id: _durchmesser
-            min: 5
-            max: 30
-            value: 17.5
-            step: 1
+            min: 10
+            max: 20
+            value: 10
+            step: 10
             value_track: True
             value_track_color: root.cs
 
@@ -152,10 +153,10 @@
 
         Slider:
             id: _haerte
-            min: 45
+            min: 55
             max: 65
-            value:55
-            step: 1
+            value:60
+            step: 0.1
             value_track: True
             value_track_color: root.cs
 
@@ -175,7 +176,7 @@
         spacing: 15
 
         Label:
-            text: str("%.1f" % _rauheit.value) + ' Rz' #eine Nachkommastelle
+            text: 'Rz: ' + str("%.1f" % _rauheit.value) +  u' \u03bcm' #eine Nachkommastelle
             color: root.cb
             bold: True
 
@@ -188,3 +189,31 @@
             value_track: True
             value_track_color: root.cs
 
+    # Materialtraganteil
+    Label:
+        text:'Materialtraganteil:              '
+        #color: cb
+        bold: True
+        font_size: root.fs
+        text_size: self.size
+        halign: 'left'
+        valign: 'center'
+        color: root.cb
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 15
+
+        Label:
+            text: 'Mr2: ' + str("%.1f" % _materialtrag.value) + ' %' #eine Nachkommastelle
+            color: root.cb
+            bold: True
+
+        Slider:
+            id: _materialtrag
+            min: 70
+            max: 100
+            value:85
+            step: 0.1
+            value_track: True
+            value_track_color: root.cs
