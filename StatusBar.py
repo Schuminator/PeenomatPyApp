@@ -137,12 +137,13 @@ class StatusBar(BoxLayout):
             E_round=107.61*(pow/100)-50.031
             #d_imp = math.log(E_Si/e_010)*(1/k_010)
             d_impround = math.log(E_round/e_010)*(1/k_010)
-            a_S = (1/2**0.5)*d_impround*0.9   #Eindruckabstand 0.9=Sicherheitsfaktor
+            a_S = (1/2**0.5)*d_impround*0.8   #Eindruckabstand 0.9=Sicherheitsfaktor
             vf = math.floor(fr*a_S*60)
             op.speed = str("{0:.0f}".format(vf)) +" mm/min"
             op.powpres = str("{0:.0f}".format(pow)) + " %"
             op.frequency = str(fr) + " Hz"
             op.hub = str(0.25) + " mm"
+            op.line = str("{0:.3f}".format(a_S)) + " mm"
 
         elif ver == "EM-MOH" and d_moh == 20:
             fr = 150
@@ -150,36 +151,39 @@ class StatusBar(BoxLayout):
             E_round=82.202*(pow/100)-32.23  #Leistung gerundet, hier mit gerundeter Leistung erreichter Energieeintrag
             #d_imp = math.log(E_Si/e_020)*(1/k_020)
             d_impround= math.log(E_round/e_020)*(1/k_020) #erzielter EIndruck mit gerundeter Leistung
-            a_S = ((1/2)**0.5)*d_impround*0.9  #Eindruckabstand
+            a_S = ((1/2)**0.5)*d_impround*0.8  #Eindruckabstand
             vf = math.floor(fr*a_S*60)
             op.speed = str("{0:.0f}".format(vf)) + " mm/min"
             op.powpres = str("{0:.0f}".format(pow)) + " %"
             op.frequency = str(fr) + " Hz"
             op.hub = str(0.25) + " mm"
+            op.line = str("{0:.3f}".format(a_S)) + " mm"
 
         elif ver == "P-MOH" and E_Si <= 10:
             pres = round(math.exp((E_Si-6.627)/7.603),1)
             fr = round(20.323*pres + 135.8,1)
             E_round = 7.6027*math.log(pres)+6.6272
             d_impround = math.log(E_round/e_020)*(1/k_020)
-            a_S = ((1 / 2) ** 0.5) * d_impround*0.9
+            a_S = ((1 / 2) ** 0.5) * d_impround*0.8
             vf = math.floor(fr * a_S * 60)
             op.speed = str("{0:.0f}".format(vf)) + " mm/min"
             op.powpres = str("{0:.1f}".format(pres)) + " bar"
             op.frequency = str(fr) + " Hz"
             op.hub = str(0.5) + " mm"
+            op.line = str("{0:.3f}".format(a_S)) + " mm"
 
         elif ver == "P-MOH" and E_Si > 10:
             pres = round((E_Si-4.9225)/7.078, 1)
             fr = round(20.323 * pres + 135.8, 1)
             E_round = 7.078*pres + 4.923
             d_impround = math.log(E_round / e_020) * (1 / k_020)
-            a_S = ((1 / 2) ** 0.5) * d_impround*0.9
+            a_S = ((1 / 2) ** 0.5) * d_impround*0.8
             vf = math.floor(fr * a_S * 60)
             op.speed = str("{0:.0f}".format(vf)) + " mm/min"
             op.powpres = str("{0:.1f}".format(pres)) + " bar"
             op.frequency = str(fr) + " Hz"
             op.hub = str(1.5) + " mm"
+            op.line = str("{0:.3f}".format(a_S)) + " mm"
 
         elif ver == " ":
             warning_popup()
@@ -212,8 +216,8 @@ class StatusBar(BoxLayout):
         op.frequency = "---"
         op.speed = "---"
         op.hub = "---"
-        op.txtfrequency ="Frequenz"
-        op.txtpowpres = "Leistung"
+        op.txtfrequency ="Frequenz:"
+        op.txtpowpres = "Leistung:"
         ap.step1.text="Auswahl treffen"
         ap.step2.text="Auswahl treffen"
         ap.materialneu.text="Auswahl treffen"
