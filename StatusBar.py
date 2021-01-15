@@ -193,7 +193,30 @@ class StatusBar(BoxLayout):
             warning_popup()
 
         print(e_010, k_010, fr, "pres", "Exakt:", E_Si,"Gerundet:", E_round,"d_impround: ",d_impround,"a_S:",a_S,vf,op.speed,op.hub,op.frequency, pow, op.powpres)
+        if pow > 100:
 
+            op.frequency = "---"
+            op.speed = "---"
+            op.hub = "---"
+            op.powpres = "---"
+            op.line = "---"
+            warning_popup()
+        elif pres > 6:
+            #warning_popup()
+            op.frequency = "---"
+            op.speed = "---"
+            op.hub = "---"
+            op.powpres = "---"
+            op.line = "---"
+            warning_popup()
+        elif ver == " ":
+            #warning_popup()
+            op.frequency = "---"
+            op.speed = "---"
+            op.hub = "---"
+            op.powpres = "---"
+            op.line = "---"
+            warning_popup()
         # Switch Outputgroeßen AppFenster
         if ver == "P-MOH":
             ip.durchmesser.value = 20
