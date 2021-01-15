@@ -210,12 +210,15 @@ class StatusBar(BoxLayout):
         #ip.pro3.state = "normal"
         #ip.material.text = "Auswahl treffen"
         #ip.vorbehandlung.text = "Auswahl treffen"
-        ip.haerte.value = 55
+        ip.haerte.value = 60
         ip.rauheit.value = 5.5
         ip.durchmesser.value = 10
+        ip.materialtrag.value = 85
         op.frequency = "---"
         op.speed = "---"
         op.hub = "---"
+        op.powpres = "---"
+        op.line = "---"
         op.txtfrequency ="Frequenz:"
         op.txtpowpres = "Leistung:"
         ap.step1.text="Auswahl treffen"
@@ -225,5 +228,5 @@ class StatusBar(BoxLayout):
 
 def warning_popup():
     show = Warn()
-    popupWindow = Popup(title = "Achtung", content =show, size_hint=(None,None), size=(400,400))
+    popupWindow = Popup(title = "Warnung", content =show, size_hint=(None,None), size=(300,200))
     popupWindow.open()
