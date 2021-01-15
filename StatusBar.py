@@ -61,7 +61,7 @@ class StatusBar(BoxLayout):
         frequenz = 0
         ET = 0
         fr = 0
-        d_imp = 0
+        d_impround = 0
         vf = 0
         a_S = 0
         pow =0
